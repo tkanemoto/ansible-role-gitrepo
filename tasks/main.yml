@@ -1,0 +1,8 @@
+---
+- name: Download repo
+  get_url:
+    url: "https://storage.googleapis.com/git-repo-downloads/repo"
+    dest: "{{ gitrepo_install_path }}/repo"
+
+- name: Set file attributes on repo
+  file: path={{ gitrepo_install_path }}/repo mode=0755
